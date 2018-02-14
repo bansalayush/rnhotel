@@ -1,7 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Displays the list of hotels along with Room with min price
  */
 
 import React, { Component } from 'react';

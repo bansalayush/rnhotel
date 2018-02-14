@@ -1,3 +1,6 @@
+/**
+ * Displays the details of the hotel clicked
+ */
 import React, { Component } from 'react';
 import {
     Platform,

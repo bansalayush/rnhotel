@@ -9,7 +9,6 @@ import { StackNavigator } from 'react-navigation';
 
 import List from './src/ListPage';
 import Details from './src/DetailsPage';
-import { Platform, StyleSheet, Text, View } from 'react-native';
 export default StackNavigator(
     {
         ListPage: { screen: List },

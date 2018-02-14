@@ -42,7 +42,6 @@ class Store {
                 for (let i = 0; i < resp.data.length; i++) {
                     this.roomList.set(resp.data[i].id, resp.data[i].price);
                 }
-                console.log(this.roomList, 'map array');
                 this.isRoomListLoading = false;
             })
             .catch(error => {

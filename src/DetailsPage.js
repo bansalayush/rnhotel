@@ -40,18 +40,10 @@ export default class DetailsPage extends Component {
         return this.store.isHotelDetailsLoading ? (
             <Loader />
         ) : (
-            <View
-                style={{
-                    width: width,
-                    height: height,
-                    marginTop: 24,
-                    marginHorizontal: 4,
-                    backgroundColor: '#0001'
-                }}
-            >
+            <View style={styles.parent}>
                 <Image
                     source={require('../treebo.png')}
-                    style={{ width: width - 8, marginBottom: 12 }}
+                    style={styles.image}
                     resizeMethod={'auto'}
                     resizeMode={'contain'}
                 />
@@ -70,3 +62,14 @@ export default class DetailsPage extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    parent: {
+        width: width,
+        height: height,
+        marginTop: 24,
+        marginHorizontal: 4,
+        backgroundColor: '#0001'
+    },
+    image: { width: width - 8, marginBottom: 12 }
+});

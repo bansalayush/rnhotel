@@ -59,16 +59,8 @@ export default class ListPage extends Component {
             <Loader />
         ) : (
             <FlatList
-                style={{
-                    marginTop: 18,
-                    marginHorizontal: 8,
-                    marginVertical: 4,
-                    backgroundColor: `rgba(0,255,0,0.05)`
-                }}
-                contentContainerStyle={{
-                    paddingHorizontal: 2,
-                    paddingVertical: 2
-                }}
+                style={styles.parent}
+                contentContainerStyle={styles.child}
                 data={this.store.hotelList}
                 renderItem={({ item }, index) => (
                     <Row
@@ -85,3 +77,15 @@ export default class ListPage extends Component {
         );
     }
 }
+const styles = StyleSheet.create({
+    parent: {
+        marginTop: 18,
+        marginHorizontal: 8,
+        marginVertical: 4,
+        backgroundColor: `rgba(0,255,0,0.05)`
+    },
+    child: {
+        paddingHorizontal: 2,
+        paddingVertical: 2
+    }
+});

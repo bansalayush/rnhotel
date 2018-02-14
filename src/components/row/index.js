@@ -1,40 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Dimensions } from 'react-native';
+import { View, Text, Dimensions,StyleSheet } from 'react-native';
 import { ListItem } from 'native-base';
 const { height, width } = Dimensions.get('window');
-/*IRowProps{
-    hotel: {city: string, locality: string, name:string, id: number }
 
-}*/
 export default class Row extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
-        console.log(this.props.hotel);
         return (
             <ListItem
                 onPress={() => {
                     this.props.onClick(this.props.hotel);
                 }}
-                style={{
-                    width: width,
-                    height: height / 6,
-                    marginVertical: 2,
-                    marginHorizontal: 4,
-                    flexDirection: 'row',
-                    justifyContent: 'space-between'
-                }}
+                style={styles.parent}
             >
                 <View
-                    style={{
-                        flexDirection: 'column',
-                        alignItems: 'flex-start',
-                        justifyContent: 'space-between'
-                    }}
+                    style={styles.child}
                 >
-                    <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
+                    <Text style={styles.hotelName}>
                         {this.props.hotel.name}
                     </Text>
                     <Text>
@@ -48,20 +33,29 @@ export default class Row extends React.Component {
                     <Text>{this.props.hotel.locality}</Text>
                 </View>
 
-                <View style={{ width: 50, height: 50 }}>
-                    <Text style={{ fontSize: 18 }}> ></Text>
+                <View style={styles.arrowContainer}>
+                    <Text style={styles.arrow}> ></Text>
                 </View>
             </ListItem>
         );
     }
 }
 
-// Row.propTypes = {
-//     hotel: PropTypes.objectOf(
-//         PropTypes.string,
-//         PropTypes.number,
-//         PropTypes.string,
-//         PropTypes.string
-//     ).isRequired,
-//     onClick:PropTypes.func.isRequired,
-// };
+const styles = StyleSheet.create({
+    parent: {
+        width: width,
+        height: height / 6,
+        marginVertical: 2,
+        marginHorizontal: 4,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    child: {
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between'
+    },
+    hotelName:{ fontSize: 18, fontWeight: 'bold' },
+    arrow:{ fontSize: 18 },
+    arrowContainer:{ width: 50, height: 50 }
+});

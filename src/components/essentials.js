@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'native-base';
-import { Dimensions } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 const { height, width } = Dimensions.get('window');
 export default class Essentials extends React.Component {
     constructor(props) {
@@ -12,8 +12,10 @@ export default class Essentials extends React.Component {
         });
     }
     render() {
-        return (
-            <View style={{ flexDirection: 'row' }}>{this._renderText()}</View>
-        );
+        return <View style={styles.parent}>{this._renderText()}</View>;
     }
 }
+
+const styles = StyleSheet.create({
+    parent: { flexDirection: 'row' }
+});

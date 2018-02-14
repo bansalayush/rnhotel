@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions , StyleSheet} from 'react-native';
 import { View, Text, Spinner } from 'native-base';
 const { height, width } = Dimensions.get('window');
 export default class Loader extends React.Component {
@@ -8,16 +8,18 @@ export default class Loader extends React.Component {
     }
     render() {
         return (
-            <View
-                style={{
-                    width: width,
-                    height: height,
-                    justifyContent: 'center',
-                    alignContent: 'center'
-                }}
-            >
+            <View style={styles.parent}>
                 <Spinner color="#f00" />
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    parent: {
+        width: width,
+        height: height,
+        justifyContent: 'center',
+        alignContent: 'center'
+    }
+});

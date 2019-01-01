@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import MApp from './MApp';
 
-AppRegistry.registerComponent('hotelreservation', () => App);
+AppRegistry.registerComponent('hotelreservation', () => MApp);
